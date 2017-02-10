@@ -4,6 +4,7 @@
 
     @include('common.message')
 
+
     <form class="form-inline" role="form">
         <div class="form-group">
             <label class="sr-only" for="student-name">name</label>
@@ -41,7 +42,7 @@
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->age }}</td>
                     <td>{{ $student->sex($student->sex) }}</td>
-                    <td>{{ date('Y-m-d', $student->created_at) }}</td>
+                    <td>{{ date('Y-m-d',$student->created_at) }}</td>
                     <td>
                         <a href="{{ url('student/detail', ['id' => $student->id]) }}">详情</a>
                         <a href="{{ url('student/update', ['id' => $student->id]) }}">修改</a>

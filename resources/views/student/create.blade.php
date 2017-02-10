@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('common.validator')
+    {{--@include('common.validator')--}}
 
     <div class="panel panel-default">
         <div class="panel-heading">新增学生</div>

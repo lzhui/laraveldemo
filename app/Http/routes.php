@@ -20,4 +20,5 @@ Route::any('student/create','StudentController@create');
 Route::post('student/save','StudentController@save');
 Route::get('student/detail/{id}','StudentController@detail');
 Route::any('student/update/{id}','StudentController@update');
+Route::any('student/delete/{id}','StudentController@delete');
 

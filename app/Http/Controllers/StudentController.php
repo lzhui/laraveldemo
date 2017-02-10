@@ -18,8 +18,8 @@ class StudentController extends Controller
 
         $search = $request->input('Student');
         if(!empty($search['name'])) {
-            $conditions[] = ' name like :name ';
-            $params[':name'] = "%".$search['name']."%";
+            $conditions[] = ' name = :name ';
+            $params[':name'] = $search['name'];
         }
 
         if(!empty($search['age'])) {
@@ -27,9 +27,9 @@ class StudentController extends Controller
             $params[':age'] = $search['age'];
         }
 
-        $students = Student::paginate(3);
+        //$students = Student::paginate(3);
         //$students = Student::where('age', '>', 11)->paginate(3);
-//        $students = Student::whereRaw(implode('and', $conditions), $params)->paginate(4);
+        $students = Student::whereRaw(implode('and', $conditions), $params)->paginate(4);
 
         return view('student.index', [
             'students' => $students,
